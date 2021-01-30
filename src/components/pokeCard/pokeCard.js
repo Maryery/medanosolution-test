@@ -5,19 +5,16 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
-const PokeCard = () => {
+const PokeCard = ({ pokemon }) => {
+	console.log(pokemon);
 	return (
 		<S.PokeCard>
 			<CardActionArea>
-				<CardMedia
-					component="img"
-					alt="pokemon image"
-					image="https://ak.picdn.net/shutterstock/videos/32692618/thumb/1.jpg"
-				/>
+				<CardMedia component="img" alt="pokemon image" image={pokemon.image} />
 				<CardContent>
-					<S.Title>Pokemon name</S.Title>
+					<S.Title>{pokemon.name}</S.Title>
 					<S.Skills variant="body2" color="textSecondary" component="p">
-						ability
+						{pokemon.abilities}
 					</S.Skills>
 				</CardContent>
 			</CardActionArea>
