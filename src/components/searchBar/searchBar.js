@@ -1,14 +1,13 @@
 import React from 'react';
 import * as S from './styles';
-import Input from '@material-ui/core/Input';
 
-const searchBar = () => {
+const SearchBar = () => {
 	return (
-		<Input
+		<S.SearchBar
 			placeholder="Enter Pokemon's name"
 			inputProps={{ 'aria-label': 'description' }}
 		/>
 	);
 };
 
-export default searchBar;
+export default SearchBar;
