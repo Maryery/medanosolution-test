@@ -1,11 +1,11 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import PokeCard from './components/pokeCard/pokeCard';
 import SearchBar from './components/searchBar/searchBar';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import PokeList from './components/pokeList/pokeList';
 import './App.css';
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
 
 const getSimplePokemon = async (url) => {
 	const pokemon = await axios.get(url).then((response) => {
@@ -24,8 +24,9 @@ const getSimplePokemon = async (url) => {
 };
 
 function App() {
-	const ENDPOINT = 'https://pokeapi.co/api/v2/pokemon/';
+	const ENDPOINT = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
 	const [data, setData] = useState([]);
+	const [search, setSearch] = useState('');
 
 	useEffect(async () => {
 		axios.get(ENDPOINT).then(async (response) => {
@@ -36,16 +37,17 @@ function App() {
 				})
 			);
 			pokemons.sort((a, b) => a.order > b.order);
-			setData(pokemons);
+			const filteredPokemons = pokemons.filter((p) => {
+				return p.name.includes(search);
+			});
+			setData(filteredPokemons);
 		});
-	}, [getSimplePokemon, setData]);
-
-	console.log(data, 'hello');
+	}, [getSimplePokemon, setData, search]);
 
 	return (
 		<div className="App">
 			<Header />
-			<SearchBar />
+			<SearchBar search={search} setSearch={setSearch} />
 			<PokeList data={data} />
 			<Footer />
 		</div>

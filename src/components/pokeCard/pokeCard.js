@@ -6,7 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 const PokeCard = ({ pokemon }) => {
-	console.log(pokemon);
 	return (
 		<S.PokeCard>
 			<CardActionArea>
