@@ -3,15 +3,18 @@ import styled from '@emotion/styled';
 export const FooterContainer = styled.div`
 	display: flex;
 	width: 100%;
-	flex-direction: row;
+	height: 50px;
+	flex-direction: column;
 	background-color: #3b4cca;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	margin-block-start: 1em;
+	position: fixed;
+	left: 0;
+	bottom: 0;
 `;
 
-export const Text = styled.p`
-	color: #bbbbbb;
+export const Text = styled.div`
+	color: white;
 	font-weight: bold;
-	margin-left: 1px;
+	font-size: 16px;
 `;

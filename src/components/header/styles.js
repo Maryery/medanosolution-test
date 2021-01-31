@@ -7,14 +7,22 @@ export const HeaderContainer = styled.div`
 	background-color: #ffcb05;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 50px;
+	padding: 10px;
 `;
 
 export const Image = styled.img`
-	max-width: 100px;
-	max-height: 100px;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	@media (min-width: 768px) {
+		width: 100px;
+		height: 100px;
+	}
 `;
 
 export const Title = styled.h1`
-	font-size: 50px;
+	font-size: 20px;
+	@media (min-width: 768px) {
+		font-size: 50px;
+	}
 `;

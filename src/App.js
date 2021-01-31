@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PokeCard from './components/pokeCard/pokeCard';
-import SearchBar from './components/searchBar/searchBar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import PokeList from './components/pokeList/pokeList';
+import Home from './components/home/home';
+import PokeDetail from './components/pokeDetail/pokeDetail';
+
 import './App.css';
 
 const getSimplePokemon = async (url) => {
@@ -47,8 +48,16 @@ function App() {
 	return (
 		<div className="App">
 			<Header />
-			<SearchBar search={search} setSearch={setSearch} />
-			<PokeList data={data} />
+			<Router>
+				<Switch>
+					<Route exact path="/">
+						<Home search={search} setSearch={setSearch} data={data} />
+					</Route>
+					<Route path="/detail/:name">
+						<PokeDetail data={data} />
+					</Route>
+				</Switch>
+			</Router>
 			<Footer />
 		</div>
 	);
