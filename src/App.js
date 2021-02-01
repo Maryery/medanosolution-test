@@ -5,7 +5,6 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Home from './components/home/home';
 import PokeDetail from './components/pokeDetail/pokeDetail';
-
 import './App.css';
 
 const getSimplePokemon = async (url) => {
