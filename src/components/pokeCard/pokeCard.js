@@ -4,12 +4,14 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 
 const PokeCard = ({ pokemon }) => {
+	console.log(pokemon);
 	return (
 		<S.Link href={`detail/${pokemon.name}`}>
 			<S.PokeCard>
 				<CardActionArea>
 					<S.Image component="img" alt="pokemon image" image={pokemon.image} />
 					<CardContent>
+						<S.Order>Nº {pokemon.order}</S.Order>
 						<S.Title>{pokemon.name}</S.Title>
 						<S.SkillsContainer>
 							{pokemon.abilities.map((ability, index) => (

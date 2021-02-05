@@ -11,11 +11,16 @@ export const PokeCard = styled(Card)`
 
 export const Image = styled(CardMedia)`
 	background-color: #d3d3d3;
+	height: 170px;
 `;
 
 export const Link = styled.a`
 	text-decoration: none;
 	padding: 10px;
+`;
+
+export const Order = styled(Typography)`
+	color: red;
 `;
 
 export const Title = styled(Typography)`
@@ -38,7 +43,7 @@ export const Skills = styled.li`
 export const SkillsItem = styled.div`
 	background-color: grey;
 	border-radius: 10px;
-	width: 75px;
+	width: auto;
 	color: white;
 	align-item: center;
 `;
