@@ -20,7 +20,7 @@ export const Link = styled.a`
 `;
 
 export const Order = styled(Typography)`
-	color: red;
+	color: #ffa500;
 `;
 
 export const Title = styled(Typography)`

@@ -2,6 +2,14 @@ import styled from '@emotion/styled';
 
 export const PokeDetailWrapper = styled.div`
 	color: black;
+	width: 50vw;
+	height: 65vh;
+	background-color: grey;
+`;
+
+export const Link = styled.a`
+	text-decoration: none;
+	float: right;
 `;
 
 export const PokeName = styled.p`

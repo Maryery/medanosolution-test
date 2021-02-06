@@ -11,6 +11,7 @@ const PokeDetail = ({ data }) => {
 	return filteredPokemons[0] !== undefined ? (
 		<S.PokeDetailWrapper>
 			<S.PokeName> {filteredPokemons[0].name}</S.PokeName>
+			<S.Link href="/">X</S.Link>
 			<S.PokeHeight>
 				The height of the Pokemon is: {filteredPokemons[0].height}
 			</S.PokeHeight>
