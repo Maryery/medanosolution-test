@@ -1,59 +1,49 @@
 import styled from '@emotion/styled';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import { keyframes } from '@emotion/react';
 
-export const PokeDetailWrapper = styled.div`
-	display: grid;
-	grid-template-columns: 40px auto 185px 40px;
-	grid-template-rows: 50px 50px 50px;
-	height: 350px;
+export const PokeDetailWrapper = styled(Card)`
 	margin-top: 20px;
 	width: 50vw;
+	margin-left: auto;
+	margin-right: auto;
 `;
 
+const pokemon = keyframes`
+from, 20%, 53%, 80%, to {
+	transform: translate3d(0,0,0);
+}
+
+40%, 43% {
+	transform: translate3d(0, -30px, 0);
+}
+
+70% {
+	transform: translate3d(0, -15px, 0);
+}
+
+90% {
+	transform: translate3d(0,-4px,0);
+`;
+
+export const PokeImage = styled.img`
+	animation: ${pokemon} 1s ease infinite;
+	width: 200px;
+	height: 200px;
+	`;
+
 export const Link = styled.a`
-	color: red;
-	font-size: 20px;
+	color: grey;
+	font-size: 15px;
 	font-weight: bold;
-	grid-column-start: 4;
-	grid-column-end: 4;
-	grid-row-start: row1-start;
-	grid-row-end: 1;
-	justify-self: end;
 	text-decoration: none;
 `;
 
 export const PokeName = styled.p`
-	font-size: 25px;
-	grid-column-start: 2;
-	grid-column-end: 4;
-	grid-row-start: row1-start;
-	grid-row-end: 1;
-	justify-self: center;
-	text-transform: uppercase;
-	@media (min-width: 768px) {
-		color: black;
-		font-size: 30px;
-		grid-column-start: 2;
-		grid-column-end: 2;
-		grid-row-start: row1-start;
-		grid-row-end: 1;
-		justify-self: center;
-		text-transform: uppercase;
-`;
-
-export const PokeHeight = styled.p`
+	display: flex;
+	justify-content: space-around;
 	font-size: 20px;
-	grid-column-start: 2;
-	grid-column-end: 4;
-	grid-row-start: row2-start;
-	grid-row-end: 2;
-	justify-self: start;
-	@media (min-width: 768px) {
-		color: black;
-		font-size: 30px;
-		grid-column-start: 2;
-		grid-column-end: 4;
-		grid-row-start: row2-start;
-		grid-row-end: 2;
-		justify-self: start;
-	}
+	font-weight: bold;
+	text-transform: uppercase;
 `;

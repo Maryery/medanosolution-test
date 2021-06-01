@@ -10,11 +10,10 @@ const PokeDetail = ({ data }) => {
 
 	return filteredPokemons[0] !== undefined ? (
 		<S.PokeDetailWrapper>
-			<S.PokeName> {filteredPokemons[0].name}</S.PokeName>
+			<S.PokeName> {filteredPokemons[0].name}
 			<S.Link href="/">X</S.Link>
-			<S.PokeHeight>
-				The height of the Pokemon is: {filteredPokemons[0].height}
-			</S.PokeHeight>
+			</S.PokeName>
+			<S.PokeImage src={filteredPokemons[0].image} alt="pokemon"></S.PokeImage>
 		</S.PokeDetailWrapper>
 	) : (
 		<p>POKEMON NOT FOUND</p>
